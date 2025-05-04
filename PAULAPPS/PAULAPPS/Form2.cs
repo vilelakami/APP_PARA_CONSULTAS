@@ -110,8 +110,30 @@ namespace PAULAAPP
                 {
                     //abrindo conexao
                     conn.Open();
-                    // Converte para string no formato correto para SQLite
-                    string dataFormatada = data.ToString("yyyy-MM-dd"); //
+
+                    //código que verifica se o cliente já está cadastrado pelo parametro celular
+                    //comando sql
+                    string verificar = "SELECT COUNT(*) FROM cadastro WHERE celular = @celular";
+
+
+                    //comando do sql passando como parametros o comando e a conexao com o banco
+
+                    using (SQLiteCommand verificarCMD = new SQLiteCommand(verificar, conn))
+                    {
+                        //adicionando o valor na tabela
+                        verificarCMD.Parameters.AddWithValue("@celular", celular);
+                        //criando um contador que verifica se esse cadastro de celular ja existe
+                        int cont = Convert.ToInt32(verificarCMD.ExecuteScalar());
+
+                        //se for maior que 0 é pq existe
+                        if(cont > 0)
+                        {
+                            MessageBox.Show("Cliente já existe!");
+                            return;
+                        }
+                    }
+                        // Converte para string no formato correto para SQLite
+                        string dataFormatada = data.ToString("yyyy-MM-dd"); //
                     //inserindo as minhas varivaeis (que armazenei logo em cima) dentro da tabela
                     string sql = @"INSERT INTO cadastro (nome, celular, qtdetoalhas, corestoalhas, coreslinhas, data, servico, orcamento)
                              VALUES
@@ -186,6 +208,37 @@ namespace PAULAAPP
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.ToUpper();
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            textBox4.Text = textBox4.Text.ToUpper();
+            textBox4.SelectionStart = textBox6.Text.Length;
+            textBox4.SelectionLength = 0;
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            textBox5.Text = textBox5.Text.ToUpper();
+            textBox5.SelectionStart = textBox6.Text.Length;
+            textBox5.SelectionLength = 0;
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            textBox6.Text = textBox6.Text.ToUpper();
+            textBox6.SelectionStart = textBox6.Text.Length;
+            textBox6.SelectionLength = 0;
         }
     }
 }

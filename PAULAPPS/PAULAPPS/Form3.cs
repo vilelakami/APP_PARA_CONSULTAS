@@ -44,14 +44,14 @@ namespace PAULAAPP
                 conn.Open();
 
                 //armazeno meu comando em sql para encontrar informações
-                string sql = @"SELECT * FROM cadastro WHERE celular = @celular ";
+                string sql = @"SELECT * FROM cadastro WHERE nome = @nome ";
 
                 //instancio um comando passando meu comando sql + a minha conexao
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
                 {
 
                     //procuro no campo celular
-                    cmd.Parameters.AddWithValue("@celular", pesquisa);
+                    cmd.Parameters.AddWithValue("@nome", pesquisa);
 
                     //não sei preciso entender melhor
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -60,6 +60,7 @@ namespace PAULAAPP
                         if (reader.Read())
                         {
                             //trago todas as informações nas minhas labels
+                            label16.Text = reader["celular"].ToString();
                             label11.Text = reader["nome"].ToString();
                             label12.Text = reader["qtdeToalhas"].ToString();
                             label13.Text = reader["corestoalhas"].ToString();
@@ -160,6 +161,13 @@ namespace PAULAAPP
         private void label17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.ToUpper();
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
         }
     }
 }
