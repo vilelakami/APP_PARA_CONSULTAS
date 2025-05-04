@@ -1,4 +1,4 @@
-📋 App para Consultas
+# 📋 App para Consultas
 
 Este é um aplicativo desktop desenvolvido em C# utilizando Windows Forms na IDE Visual Studio. O objetivo principal é ajudar minha mãe, que trabalha com bordados, a organizar seus pedidos e criar um cronograma de entregas.
 
