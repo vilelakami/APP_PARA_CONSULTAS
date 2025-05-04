@@ -1,4 +1,5 @@
 📋 App para Consultas
+
 Este é um aplicativo desktop desenvolvido em C# utilizando Windows Forms na IDE Visual Studio. O objetivo principal é ajudar minha mãe, que trabalha com bordados, a organizar seus pedidos e criar um cronograma de entregas.
 
 O sistema utiliza SQLite como banco de dados local, facilitando o armazenamento e consulta das informações de forma prática e eficiente.
