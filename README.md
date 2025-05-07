@@ -5,6 +5,7 @@ Este é um aplicativo desktop desenvolvido em C# utilizando Windows Forms na IDE
 O sistema utiliza SQLite como banco de dados local, facilitando o armazenamento e consulta das informações de forma prática e eficiente.
 
 🧵 Objetivo
+
 Facilitar a gestão de encomendas e contatos de clientes para pequenos empreendedores, oferecendo um sistema simples e funcional para:
 
 Cadastrar clientes
@@ -14,6 +15,7 @@ Visualizar pedidos
 Consultar informações rapidamente
 
 🖥️ Tecnologias Utilizadas
+
 C#
 
 Windows Forms (.NET)
@@ -23,14 +25,15 @@ SQLite (como banco de dados local)
 Visual Studio
 
 📌 Funcionalidades
-TELA 1 – Início
+
+- TELA 1 – Início
 Tela principal de navegação, com acesso a duas funcionalidades principais:
 
 Cadastro de Clientes
 
 Visualização de Clientes
 
-TELA 2 – Cadastro de Clientes
+- TELA 2 – Cadastro de Clientes
 Através do botão "Cadastrar Clientes", é possível registrar:
 
 Nome
@@ -43,7 +46,7 @@ Cores
 
 Tipos de serviços executados
 
-TELA 3 – Visualizar Clientes
+- TELA 3 – Visualizar Clientes
 Através do botão "Visualizar Clientes", você pode:
 
 Pesquisar clientes pelo número de celular
@@ -64,14 +67,17 @@ Visualizar os dados previamente cadastrados
 └── README.md
 
 ✅ Requisitos para Execução
+
 -> Visual Studio instalado
 
 -> .NET Framework compatível com Windows Forms
 
 💡 Considerações
+
 Esse projeto foi feito com carinho como uma forma de retribuir o trabalho e dedicação da minha mãe. Sinta-se à vontade para usar, modificar ou sugerir melhorias!
 
 📬 Contato
+
 Se quiser entrar em contato comigo:
 
 [Kami Vilela]
